@@ -29,7 +29,7 @@ else{
 }
 
   //declaring variables with alphabets ,number and special characters
-   var specialCharacters = '!@#$%^&*(){}[]=<>/,.' ;
+   var specialCharacters = '!@#$%^&*(){}[]=<>/,".?:-_+|~"' ;
   var upperCasedCharacters ='ABCDEFGHIJKLMNOPQRSTUVWXYZ';
   var lowerCasedCharacters ='abcdefghijklmnopqrstuvwxyz';
   var numericCharacters ='0123456789';

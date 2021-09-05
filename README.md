@@ -19,4 +19,4 @@ write function is used to write it to the text area
 
 github repository:https://github.com/Kuleenabinoy/passwordGenerator
 
-deployed website:
+deployed website:https://kuleenabinoy.github.io/passwordGenerator/
