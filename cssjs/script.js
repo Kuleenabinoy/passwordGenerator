@@ -34,10 +34,10 @@ function writePassword()
 { 
   passwordNo=prompt ("Enter no of characters in password");
 
-noOfchar=passwordNo;
-if((noOfchar<8)||(noOfchar>=128)||(noOfchar===' ')||(noOfchar===null))// checking whether user choice is <8 or >128 or emptyspace  or null 
+ noOfchar=passwordNo;
+if((noOfchar<8)||(noOfchar>=128)||(noOfchar===' ')||(noOfchar==null)||(isNaN(noOfchar)==true))// checking whether user choice is <8 or >128 or emptyspace ,null ,or an alphabet
  {
-   alert("Kindly Enter a valid no between 8-128");
+   alert("Kindly Enter a valid no between 8-128");//alert given for correct entry
 
  }
  else{
