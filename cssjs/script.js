@@ -16,16 +16,16 @@ var nM=numericCharacters;
 var lC=lowerCasedCharacters;
 var uC=upperCasedCharacters;
 var password1='';
-option1=sC+nM+lC+uC;//all select
-option2=sC+nM; //special numeric
-option3=lC+uC; //lower upper
-option4=nM+lC; //numeric,lowercase
-option5=sC+nM+lC; //special numeric lower
-option6=nM+lC+uC; //numeric lower uppercase
-option7=sC;//special character option
-option8=nM;//numeric option
-option9=lC;//lowercase option
-option10=uC;//uppercase option
+var option1=sC+nM+lC+uC;//all select
+var option2=sC+nM; //special numeric
+var option3=lC+uC; //lower upper
+var option4=nM+lC; //numeric,lowercase
+var option5=sC+nM+lC; //special numeric lower
+var option6=nM+lC+uC; //numeric lower uppercase
+var option7=sC;//special character option
+var option8=nM;//numeric option
+var option9=lC;//lowercase option
+var option10=uC;//uppercase option
 
 var generateBtn = document.querySelector("#generate").addEventListener("click",writePassword);
 
@@ -60,11 +60,6 @@ if((noOfchar<8)||(noOfchar>=128)||(noOfchar===' ')||(noOfchar===null))// checkin
 }
 }
 //end of write function
-
-
-  
-
-
 
 //function generatePassword() to generate password after checking options using if loop
 //after checking option it call corresponding random password generate function
@@ -153,8 +148,6 @@ else if(upperCaseselector===true)
  }
 }
 // end of generate function
-
-
 
 //Random string generating functions 6 functions are added for 6 possible options
 
