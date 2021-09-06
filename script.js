@@ -2,7 +2,7 @@
 var passwordNo=prompt ("Enter no of characters in password");
 var noOfchar=0;
 noOfchar=passwordNo;
-if((noOfchar<8)||(noOfchar>=128)||(noOfchar===' ')||(noOfchar===null)||(noOfchar=typeof String))// checking whether user choice is <8 0r >128 or emptyspace, string or null 
+if((noOfchar<8)||(noOfchar>=128)||(noOfchar===' ')||(noOfchar===null))// checking whether user choice is <8 0r >128 or emptyspace  or null 
  {
    alert("Kindly Enter a valid no between 8-128");
 
