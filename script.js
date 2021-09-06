@@ -1,13 +1,10 @@
-
 //Taking user input using prompt and confirm
-
-var passwordNo=prompt ("enter no of characters in password");
+var passwordNo=prompt ("Enter no of characters in password");
 var noOfchar=0;
 noOfchar=passwordNo;
-if((noOfchar==='0')||(noOfchar===' ')||(noOfchar===null))// checking whether user choice is 0 or empty string or null string
+if((noOfchar<8)||(noOfchar>=128)||(noOfchar===' ')||(noOfchar===null)||(noOfchar=typeof String))// checking whether user choice is <8 0r >128 or emptyspace, string or null 
  {
-   alert("Kindly Enter Number of digits for password");
-
+   alert("Kindly Enter a valid no between 8-128");
 
  }
  else{
@@ -18,13 +15,14 @@ var specialCharacterselector=confirm("Do you want to have special  charcater in 
  }
 
 
- //checking for atleast 2 selectors are true to continue
- if((((lowerCaseselector!==true)||(upperCaseselector!==true))||(wholeNumberselector!==true)) &&((wholeNumberselector!==true)||(specialCharacterselector!==true)))
+ //checking for atleast 1 selectors are true to continue
+ if((lowerCaseselector!==true)||(upperCaseselector!==true)||(wholeNumberselector!==true) ||(wholeNumberselector!==true)||(specialCharacterselector!==true))
   {
-    alert(" You need to select atleast two options");
+    alert(" You need to select atleast one options");
 
  }
-else{
+else
+{
   console.log(passwordNo);
 }
 
@@ -44,10 +42,15 @@ option3=lC+uC; //lower upper
 option4=nM+lC; //numeric,lowercase
 option5=sC+nM+lC; //special numeric lower
 option6=nM+lC+uC; //numeric lower uppercase
+option7=sC;//special character option
+option8=nM;//numeric option
+option9=lC;//lowercase option
+option10=uC;//uppercase option
 
-// Add event listener to generate button    
 var generateBtn = document.querySelector("#generate");
+// Add event listener to generate button    
 //generateBtn.addEventListener("click",generatePassword());
+
 generateBtn.addEventListener("click", writePassword());
 
 
@@ -106,9 +109,38 @@ else if((wholeNumberselector===true)&&(lowerCaseselector===true))
     }
     
 }
+else if(specialCharacterselector===true)
+{
+  for (var i=0;i<noOfchar;i++)
+  { password1 +=getRandomspecial();
+    console.log( "password7" ,password1);
+  }
+}
+else if(wholeNumberselector===true)
+{
+  for (var i=0;i<noOfchar;i++)
+  { password1 +=getRandomNumeric();
+    console.log( "password8" ,password1);
+  }
+  
+}
+else if(lowerCaseselector===true)
 
+{
+  for (var i=0;i<noOfchar;i++)
+  { password1 +=getRandomlower();
+    console.log( "password9" ,password1);
+  }
+}
+else if(upperCaseselector===true)
 
-}// end of generate function
+{ for (var i=0;i<noOfchar;i++)
+  { password1 +=getRandomUpper();
+    console.log( "password10" ,password1);
+  }
+ }
+}
+// end of generate function
 
 // function  writepassword() to write in text area
 
@@ -151,7 +183,22 @@ function getRandomNumericlowerupper()
 {
   return option6[Math.floor(Math.random()*option6.length)];
 }
-
+function getRandomUpper()
+{
+  return option10[Math.floor(Math.random()*option10.length)];
+}
+function getRandomlower()
+{
+  return option9[Math.floor(Math.random()*option9.length)];
+}
+function getRandomspecial()
+{
+  return option7[Math.floor(Math.random()*option7.length)];
+}
+function getRandomNumeric()
+{
+  return option8[Math.floor(Math.random()*option8.length)];
+}
 //end of random string generating functions
 
 
