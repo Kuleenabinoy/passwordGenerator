@@ -1,40 +1,20 @@
-//Taking user input using prompt and confirm
-var passwordNo=prompt ("Enter no of characters in password");
+
+//global variable declaration
+var upperCaseselector;
+var lowerCaseselector;
+var wholeNumberselector;
+var specialCharacterselector;
+var passwordNo;
 var noOfchar=0;
-noOfchar=passwordNo;
-if((noOfchar<8)||(noOfchar>=128)||(noOfchar===' ')||(noOfchar===null))// checking whether user choice is <8 or >128 or emptyspace  or null 
- {
-   alert("Kindly Enter a valid no between 8-128");
-
- }
- else{
-var upperCaseselector=confirm("Do you want to have uppercase in password");
-var lowerCaseselector=confirm("Do you want to have lowercase in password");
-var wholeNumberselector=confirm("Do you want to have Number in password");
-var specialCharacterselector=confirm("Do you want to have special  charcater in password");
- }
-
-
- //checking for atleast 1 selectors are true to continue
- if((lowerCaseselector!==true)||(upperCaseselector!==true)||(wholeNumberselector!==true) ||(wholeNumberselector!==true)||(specialCharacterselector!==true))
-  {
-    alert(" You need to select atleast one options");
-
- }
-else
-{
-  console.log(passwordNo);
-}
-
-  //declaring variables with alphabets ,number and special characters
-   var specialCharacters = '!@#$%^&*(){}[]=<>/,".?:-_+|~"' ;
-  var upperCasedCharacters ='ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-  var lowerCasedCharacters ='abcdefghijklmnopqrstuvwxyz';
-  var numericCharacters ='0123456789';
- var sC=specialCharacters;
- var nM=numericCharacters;
- var lC=lowerCasedCharacters;
- var uC=upperCasedCharacters;
+//declaring variables with alphabets ,number and special characters
+var specialCharacters = '!@#$%^&*(){}[]=<>/,".?:-_+|~"' ;
+var upperCasedCharacters ='ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+var lowerCasedCharacters ='abcdefghijklmnopqrstuvwxyz';
+var numericCharacters ='0123456789';
+var sC=specialCharacters;
+var nM=numericCharacters;
+var lC=lowerCasedCharacters;
+var uC=upperCasedCharacters;
 var password1='';
 option1=sC+nM+lC+uC;//all select
 option2=sC+nM; //special numeric
@@ -47,11 +27,43 @@ option8=nM;//numeric option
 option9=lC;//lowercase option
 option10=uC;//uppercase option
 
-var generateBtn = document.querySelector("#generate");
-// Add event listener to generate button    
-//generateBtn.addEventListener("click",generatePassword());
+var generateBtn = document.querySelector("#generate").addEventListener("click",writePassword);
 
-generateBtn.addEventListener("click", writePassword());
+// function  writepassword() to write in text area and for data entry upon clickevent of generate button
+function writePassword()
+{ 
+  passwordNo=prompt ("Enter no of characters in password");
+
+noOfchar=passwordNo;
+if((noOfchar<8)||(noOfchar>=128)||(noOfchar===' ')||(noOfchar===null))// checking whether user choice is <8 or >128 or emptyspace  or null 
+ {
+   alert("Kindly Enter a valid no between 8-128");
+
+ }
+ else{
+ upperCaseselector=confirm("Do you want to have uppercase in password");
+ lowerCaseselector=confirm("Do you want to have lowercase in password");
+ wholeNumberselector=confirm("Do you want to have Number in password");
+ specialCharacterselector=confirm("Do you want to have special  charcater in password");
+ }
+ if((lowerCaseselector!==true)&&(upperCaseselector!==true)&&(wholeNumberselector!==true) &&(wholeNumberselector!==true)&&(specialCharacterselector!==true))
+  {
+    alert(" You need to select atleast one options");
+  }
+  else
+  {
+  generatePassword();
+  console.log( "passwordfinal" ,password1);
+  var passwordText = document.querySelector("#password");
+  passwordText.value = password1;
+
+}
+}
+//end of write function
+
+
+  
+
 
 
 //function generatePassword() to generate password after checking options using if loop
@@ -142,17 +154,7 @@ else if(upperCaseselector===true)
 }
 // end of generate function
 
-// function  writepassword() to write in text area
 
-function writePassword()
-{ 
-  generatePassword();
-  console.log( "passwordfinal" ,password1);
-  var passwordText = document.querySelector("#password");
-  passwordText.value = password1;
-
-}
-//end of write function
 
 //Random string generating functions 6 functions are added for 6 possible options
 
