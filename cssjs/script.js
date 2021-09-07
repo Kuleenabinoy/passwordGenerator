@@ -27,18 +27,23 @@ var option8=nM;//numeric option
 var option9=lC;//lowercase option
 var option10=uC;//uppercase option
 
+var passwordText = document.querySelector("#password");
+
 var generateBtn = document.querySelector("#generate").addEventListener("click",writePassword);
 
 // function  writepassword() to write in text area and for data entry upon clickevent of generate button
 function writePassword()
-{ 
+{
+ passwordText.value ="";//clears the textarea
+
   passwordNo=prompt ("Enter no of characters in password");
 
  noOfchar=passwordNo;
-if((noOfchar<8)||(noOfchar>=128)||(noOfchar===' ')||(noOfchar==null)||(isNaN(noOfchar)==true))// checking whether user choice is <8 or >128 or emptyspace ,null ,or an alphabet
+
+if((noOfchar<8)||(noOfchar>128)||(noOfchar===' ')||(noOfchar==null)||(isNaN(noOfchar)==true))// checking whether user choice is <8 or >128 or emptyspace ,null ,or an alphabet
  {
    alert("Kindly Enter a valid no between 8-128");//alert given for correct entry
-
+return;
  }
  else{
  upperCaseselector=confirm("Do you want to have uppercase in password");
@@ -52,10 +57,12 @@ if((noOfchar<8)||(noOfchar>=128)||(noOfchar===' ')||(noOfchar==null)||(isNaN(noO
   }
   else
   {
+   
   generatePassword();
   console.log( "passwordfinal" ,password1);
-  var passwordText = document.querySelector("#password");
+ 
   passwordText.value = password1;
+  
 
 }
 }
@@ -64,7 +71,8 @@ if((noOfchar<8)||(noOfchar>=128)||(noOfchar===' ')||(noOfchar==null)||(isNaN(noO
 //function generatePassword() to generate password after checking options using if loop
 //after checking option it call corresponding random password generate function
 function generatePassword()
-{
+{ 
+  password1 = "";
   if(((wholeNumberselector===true)&&(specialCharacterselector===true))&&((lowerCaseselector===true)&&(upperCaseselector===true)))
   {
     for (var i=0;i<noOfchar;i++)
