@@ -20,3 +20,4 @@ random method is used to select a random choice using different functions
 github repository:https://github.com/Kuleenabinoy/passwordGenerator
 
 deployed website:https://kuleenabinoy.github.io/passwordGenerator/
+![Password-Generator](https://user-images.githubusercontent.com/86656634/136651998-a1c9fe07-5bb5-49c4-a60a-dbd72ac2598a.png)
